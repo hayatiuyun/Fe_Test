@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Karla } from "next/font/google";
 import "./globals.css";
+import ThemeRegistry from "@/theme/ThemeRegistry";
+import { NextAuthProvider } from "@/auth/NextAuthProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const karla = Karla({ subsets: ["latin"], variable: "--font-karla" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={karla.className}>
+     
+      <div className="absolute overflow-hidden -left-[15%] top-[5%] aspect-square h-[110%] bg-[radial-gradient(#5526ba35_0%,_transparent_70%)] dark:bg-[radial-gradient(#5526ba35_0%,_transparent_70%)]"></div>
+      <div className="absolute  overflow-hidden -right-[15%]  -top-[25%] aspect-square h-[110%] bg-[radial-gradient(#156dcf45_0%,_transparent_70%)] dark:bg-[radial-gradient(#156dcf35_0%,_transparent_70%)]"></div>
+        <ThemeRegistry options={{ key: "mui" }}>
+          <NextAuthProvider>{children}</NextAuthProvider>
+        </ThemeRegistry>
+      </body>
     </html>
   );
 }

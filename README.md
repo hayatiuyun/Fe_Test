@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Routes Management Applications
 
 ## Getting Started
 
-First, run the development server:
+To get this Next.js project up and running locally, follow these steps:
 
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/hayatiuyun/fe_test.git
+   ```
+2. Navigate into the project directory:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd fe_test
+```
+3. Install dependencies using npm:
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Setup Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project requires the following environment variables to be set for configuration:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+* `NEXT_PUBLIC_API_URL`: This is the base URL for API endpoints.
+* `NEXTAUTH_SECRET`: Secret used for encrypting cookies. Generate a secure random string for this.
+* `NEXTAUTH_URL`: The base URL of your application used by NextAuth.
 
-## Learn More
+Create a `.env.local` file in the root of project and add these variables:
 
-To learn more about Next.js, take a look at the following resources:
+```
+NEXT_PUBLIC_API_URL=https://your-api-url.com
+NEXTAUTH_SECRET=your_secret_here
+NEXTAUTH_URL=http://localhost:3000
+```
+Replace https://your-api-url.com with the actual URL of your API and http://localhost:3000 with your local development URL.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running Development Server
+Once the environment variables are set, you can start the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+npm run dev
+```
+### Additional Command
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* `npm run build`: Builds the production application in the `.next` folder.
+* `npm start`: Starts the Next.js server in production mode.

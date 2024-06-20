@@ -1,11 +1,6 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       backgroundImage: {
@@ -13,8 +8,89 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        primary: {
+          default: "#A60067",
+          25: "#F5E3F3",
+          50: "#F0D6EB",
+          100: "#E1AED6",
+          200: "#D288C1",
+          300: "#C360AC",
+          400: "#B73997",
+          500: "#A60067",
+          600: "#840053",
+          700: "#620040",
+        },
+        secondary: {
+          default: "#0052A3",
+          25: "#E3F3F5",
+          50: "#D6EBF0",
+          100: "#AED6E1",
+          200: "#88C1D2",
+          300: "#60ACD3",
+          400: "#3997B4",
+          500: "#0052A3",
+          600: "#004282",
+          700: "#003061",
+        },
+        tertiary: {
+          default: "#FFD700",
+          25: "#FFF9E6",
+          50: "#FFF3CD",
+          100: "#FFE699",
+          200: "#FFD366",
+          300: "#FFC033",
+          400: "#FFB300",
+          500: "#FFD700",
+          600: "#CCAD00",
+          700: "#997400",
+        },
+        warning: {
+          default: "#FF5733",
+          25: "#FFF1E6",
+          50: "#FFE3CD",
+          100: "#FFC699",
+          200: "#FF9966",
+          300: "#FF6633",
+          400: "#FF3300",
+          500: "#FF5733",
+          600: "#CC4600",
+          700: "#993500",
+        },
+        success: {
+          default: "#00A86B",
+          25: "#E6F6F2",
+          50: "#CDEDE5",
+          100: "#99DDBC",
+          200: "#66C693",
+          300: "#33B96A",
+          400: "#00AD41",
+          500: "#00A86B",
+          600: "#008A56",
+          700: "#006B41",
+        },
+        error: {
+          default: "#FF3333",
+          25: "#FFE6E6",
+          50: "#FFCDCD",
+          100: "#FF9999",
+          200: "#FF6666",
+          300: "#FF3333",
+          400: "#FF0000",
+          500: "#FF3333",
+          600: "#CC0000",
+          700: "#990000",
+        },
+      },
     },
+    fontFamily: {
+      sans: ["Karla", "sans-serif"],
+      serif: ["Karla", "serif"],
+    },
+    colors: {
+      white: "#FFFFFF",
+      black: "#212121",
+    },
+    plugins: [],
   },
-  plugins: [],
 };
-export default config;
